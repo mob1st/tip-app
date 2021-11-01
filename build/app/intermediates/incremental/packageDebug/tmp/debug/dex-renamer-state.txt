@@ -1,4 +1,0 @@
-#Wed Oct 13 22:37:29 BRT 2021
-base.0=/Users/pablosilva/FlutterProjects/pablobaldez/tip/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

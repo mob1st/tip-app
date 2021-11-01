@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -21,7 +22,7 @@ void main() {
         'THEN an ArgumentError should be thrown',
         () {
           expect(
-            mockUseCase(-1),
+            () => mockUseCase(6),
             throwsArgumentError,
           );
         },
@@ -33,7 +34,7 @@ void main() {
         'THEN an ArgumentError should be thrown',
         () {
           expect(
-            mockUseCase(-1),
+            () => mockUseCase(-1),
             throwsArgumentError,
           );
         },
@@ -44,10 +45,10 @@ void main() {
         ' AND 5 months in the past '
         'WHEN get the expenses '
         'THEN the expenses provided by the repository should be returned',
-        () {
-          expect(
-            mockUseCase(5),
-            completion(equals(_budgetTransactionFixture())),
+        () async {
+          const ListEquality().equals(
+            await mockUseCase(5),
+            _budgetTransactionFixture(),
           );
         },
       );
@@ -57,10 +58,10 @@ void main() {
           ' AND 0 months '
           'WHEN get the expenses '
           'THEN the expenses provided by the repository should be returned',
-          () {
-        expect(
-          mockUseCase(0),
-          completion(equals(_budgetTransactionFixture())),
+          () async {
+        const ListEquality().equals(
+          await mockUseCase(0),
+          _budgetTransactionFixture(),
         );
       });
     },
@@ -69,10 +70,8 @@ void main() {
 
 Future<List<BudgetTransactions>> mockUseCase(int repositoryArg) {
   final repository = MockBudgetTransactionsRepository();
-  final completer = Completer<List<BudgetTransactions>>();
-  completer.complete(_budgetTransactionFixture());
   when(repository.getByPreviousMonth(fromToday: repositoryArg)).thenAnswer(
-    (_) => completer.future,
+    (_) => Future(() => _budgetTransactionFixture()),
   );
   return getBudgetTransactions(repository, monthsFromToday: repositoryArg);
 }
