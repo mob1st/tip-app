@@ -9,7 +9,7 @@ import 'package:tip/src/features/expanses/domain/entities.dart';
 import 'package:tip/src/features/expanses/domain/repositories.dart';
 import 'package:tip/src/features/expanses/domain/usecases.dart';
 
-import 'expenses.mocks.dart';
+import 'expenses_test.mocks.dart';
 
 @GenerateMocks([BudgetTransactionsRepository])
 void main() {
