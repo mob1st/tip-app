@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tip/selected_expense.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -104,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            const SelectedExpense(),
+            const Text('anything'),
           ],
         ),
       ),
