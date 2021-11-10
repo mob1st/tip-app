@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tip/src/foundation/design_system/theme/styled_content.dart';
+import 'package:tip/src/foundation/design_system/theme/extensions.dart';
 import 'package:tip/src/foundation/design_system/widgets/atoms/vertical_progress.dart';
 
 class TransactionListTile extends StatelessWidget {
@@ -18,11 +19,12 @@ class TransactionListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final styledSubtitle;
+    final Widget? styledSubtitle;
     if (subtitle != null) {
       styledSubtitle = StyledContent(
         child: subtitle!,
         style: Theme.of(context).textTheme.bodyText2,
+        opacity: context.opacityLevel.medium,
       );
     } else {
       styledSubtitle = null;
@@ -30,9 +32,9 @@ class TransactionListTile extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: ListTile(
-        title: title,
-        subtitle: styledSubtitle,
         leading: progress,
+        title: title,
+        subtitle: styledSubtitle,        
         trailing: const Icon(Icons.ac_unit_sharp),
       ),
     );

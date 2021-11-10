@@ -12,16 +12,18 @@ class TipTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
     return MaterialApp(
       theme: light(),
       darkTheme: dark(),
-      home: StyledContent(
-        style: DefaultTextStyle.of(context).style,
-        color: scheme.onColorFor(scheme.surface),
-        opacity: 1.0,
-        child: child,
-      ),
+      home: Builder(builder: (innerContext) {
+        final scheme = Theme.of(innerContext).colorScheme;
+        return StyledContent(
+          style: DefaultTextStyle.of(innerContext).style,
+          color: scheme.onColorFor(scheme.surface),
+          opacity: 1.0,
+          child: child,
+        );
+      }),
     );
   }
 }

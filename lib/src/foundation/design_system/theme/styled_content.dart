@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tip/src/foundation/design_system/theme/default_content_alpha.dart';
 import 'package:tip/src/foundation/design_system/theme/default_content_color.dart';
 
-class StyledText extends StatelessWidget {
+class StyledContent extends StatelessWidget {
   final Widget child;
   final TextStyle? style;
   final Color? color;
   final double? opacity;
 
-  const StyledText({
+  const StyledContent({
     Key? key,
     this.style,
     this.color,
