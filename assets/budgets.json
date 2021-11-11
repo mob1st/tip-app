@@ -1,0 +1,32 @@
+[
+    {
+        "type": "FIXED",
+        "total": 5000.00,
+        "expanses": [
+            {
+                "name": "Aluguel",
+                "value": 2000.00
+            }
+        ]
+    },
+    {
+        "type": "VARIABLE",
+        "total": 800.00,
+        "expanses": [
+            {
+                "name": "Uber",
+                "value": 50.00
+            }
+        ]
+    },
+    {
+        "type": "SEASONAL",
+        "total": 12000.00,
+        "expanses": [
+            {
+                "name": "Vacation",
+                "value": 5000.00
+            }
+        ]
+    }
+]

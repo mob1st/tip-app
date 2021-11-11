@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
 import 'package:tip/src/features/budgets/domain/budget_entitites.dart';
 
-/// a list of [Transaction] related to a [Budget] is the definition of
-class BudgetTransactions extends Equatable {
-  final List<Transaction> transactions;
+/// a list of [Expanse] related to a [Budget] is the definition of
+class BudgetExpanses extends Equatable {
+  final List<Expanse> expanses;
   final Budget budget;
 
   @override
   List<Object?> get props => [
-        transactions,
+        expanses,
         budget,
       ];
 
-  const BudgetTransactions({required this.transactions, required this.budget});
+  const BudgetExpanses({required this.expanses, required this.budget});
 }
 
 /// A financial transaction on user account
-class Transaction extends Equatable {
+class Expanse extends Equatable {
   final double value;
   final String name;
   final String id;
@@ -30,7 +30,7 @@ class Transaction extends Equatable {
         date,
       ];
 
-  const Transaction({
+  const Expanse({
     required this.value,
     required this.name,
     required this.id,

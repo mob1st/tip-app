@@ -9,7 +9,7 @@ enum BudgetType {
   monthly,
 
   /// All weekly recurring expenses tipically called seasonal costs
-  ocassional
+  ocassional,
 }
 
 class Budget extends Equatable {
