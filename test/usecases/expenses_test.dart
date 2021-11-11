@@ -68,7 +68,7 @@ void main() {
   );
 }
 
-Future<List<BudgetTransactions>> mockUseCase(int repositoryArg) {
+Future<List<BudgetExpanses>> mockUseCase(int repositoryArg) {
   final repository = MockBudgetTransactionsRepository();
   when(repository.getByPreviousMonth(fromToday: repositoryArg)).thenAnswer(
     (_) => Future(() => _budgetTransactionFixture()),
@@ -76,10 +76,10 @@ Future<List<BudgetTransactions>> mockUseCase(int repositoryArg) {
   return getBudgetTransactions(repository, monthsFromToday: repositoryArg);
 }
 
-List<BudgetTransactions> _budgetTransactionFixture() => [
-      BudgetTransactions(
-        transactions: [
-          Transaction(
+List<BudgetExpanses> _budgetTransactionFixture() => [
+      BudgetExpanses(
+        expanses: [
+          Expanse(
             value: 18.0,
             name: 'bill',
             id: "any",
@@ -88,7 +88,6 @@ List<BudgetTransactions> _budgetTransactionFixture() => [
         ],
         budget: Budget(
           name: 'weekly',
-          type: BudgetType.weekly,
           items: [
             BudgetItem(
               name: 'bills',

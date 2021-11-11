@@ -6,7 +6,7 @@ import 'package:tip/src/features/expanses/domain/repositories.dart';
 ///
 /// Throws [ArgumentError] if [fromToday] is < 0 or > 5.
 /// Use 0 if the current month is the required.
-Future<List<BudgetTransactions>> getBudgetTransactions(
+Future<List<BudgetExpanses>> getBudgetTransactions(
   BudgetTransactionsRepository repository, {
   required int monthsFromToday,
 }) {

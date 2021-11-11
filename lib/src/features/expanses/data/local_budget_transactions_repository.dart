@@ -8,7 +8,8 @@ import 'package:tip/src/features/expanses/domain/repositories.dart';
 import 'package:tip/src/features/expanses/data/api_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class LocalBudgetTransactionsRepository extends BudgetTransactionsRepository {
+class LocalBudgetTransactionsRepository
+    implements BudgetTransactionsRepository {
   final BudgetRepository _budgetRepository;
 
   LocalBudgetTransactionsRepository(this._budgetRepository);

@@ -1,18 +1,10 @@
 [
+    
     {
-        "type": "FIXED",
-        "total": 5000.00,
-        "expanses": [
-            {
-                "name": "Aluguel",
-                "value": 2000.00
-            }
-        ]
-    },
-    {
-        "type": "VARIABLE",
+        "id": "variableID",
+        "name": "Semanal",
         "total": 800.00,
-        "expanses": [
+        "costs": [
             {
                 "name": "Uber",
                 "value": 50.00
@@ -20,9 +12,22 @@
         ]
     },
     {
+        "id": "fixedID",
+        "name": "Mensal",        
+        "total": 5000.00,
+        "costs": [
+            {
+                "name": "Aluguel",
+                "value": 2000.00
+            }
+        ]
+    },
+    {
+        "id": "seasonalID",
+        "name": "Sazonal",
         "type": "SEASONAL",
         "total": 12000.00,
-        "expanses": [
+        "costs": [
             {
                 "name": "Vacation",
                 "value": 5000.00
