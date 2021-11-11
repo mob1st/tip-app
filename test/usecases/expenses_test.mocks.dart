@@ -5,6 +5,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:tip/src/features/expanses/domain/entities.dart' as _i4;
 import 'package:tip/src/features/expanses/domain/repositories.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
@@ -26,11 +27,11 @@ class MockBudgetTransactionsRepository extends _i1.Mock
   }
 
   @override
-  _i3.Future<List<dynamic>> getByPreviousMonth({int? fromToday}) => (super
-      .noSuchMethod(
+  _i3.Future<List<_i4.BudgetExpanses>> getByPreviousMonth({int? fromToday}) =>
+      (super.noSuchMethod(
           Invocation.method(#getByPreviousMonth, [], {#fromToday: fromToday}),
-          returnValue: Future<List<dynamic>>.value(<dynamic>[])) as _i3
-      .Future<List<dynamic>>);
+          returnValue: Future<List<_i4.BudgetExpanses>>.value(
+              <_i4.BudgetExpanses>[])) as _i3.Future<List<_i4.BudgetExpanses>>);
   @override
   String toString() => super.toString();
 }
