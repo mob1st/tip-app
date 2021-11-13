@@ -86,10 +86,13 @@ List<BudgetExpanses> _budgetTransactionFixture() => [
             date: DateTime.now(),
           ),
         ],
-        budget: Budget(
+        budget: const Budget(
+          id: "any",
           name: 'weekly',
-          items: [
-            BudgetItem(
+          total: 20.0,
+          costs: [
+            Cost(
+              id: 'any',
               name: 'bills',
               value: 20.0,
             ),

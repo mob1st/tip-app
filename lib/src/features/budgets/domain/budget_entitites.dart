@@ -13,22 +13,27 @@ enum BudgetType {
 }
 
 class Budget extends Equatable {
+  final String id;
   final String name;
-  final List<BudgetItem> items;
+  final double total;
+  final List<Cost> costs;
 
   @override
   List<Object?> get props => [
         name,
-        items,
+        costs,
       ];
 
   const Budget({
+    required this.id,
     required this.name,
-    required this.items,
+    required this.total,
+    required this.costs,
   });
 }
 
-class BudgetItem extends Equatable {
+class Cost extends Equatable {
+  final String id;
   final String name;
   final double value;
 
@@ -38,7 +43,8 @@ class BudgetItem extends Equatable {
         value,
       ];
 
-  const BudgetItem({
+  const Cost({
+    required this.id,
     required this.name,
     required this.value,
   });

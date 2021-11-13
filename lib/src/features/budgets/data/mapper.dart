@@ -1,9 +1,10 @@
 import 'package:tip/src/features/budgets/domain/budget_entitites.dart';
 import 'package:tip/src/features/budgets/data/api_model.dart' as api;
 
-extension on api.Budget {
+extension ToDomain on api.Budget {
   Budget toDomain() => Budget(
         name: name,
+        total: total,
         costs: costs
             .map(
               (e) => e.toDomain(),

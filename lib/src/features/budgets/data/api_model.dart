@@ -23,10 +23,12 @@ class Budget {
 
 @JsonSerializable()
 class Cost {
+  final String id;
   final String name;
   final double value;
 
   const Cost({
+    required this.id,
     required this.name,
     required this.value,
   });

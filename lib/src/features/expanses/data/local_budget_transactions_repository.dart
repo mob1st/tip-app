@@ -8,11 +8,11 @@ import 'package:tip/src/features/expanses/domain/repositories.dart';
 import 'package:tip/src/features/expanses/data/api_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class LocalBudgetTransactionsRepository
+class LocalBudgetExpansesRepository
     implements BudgetTransactionsRepository {
   final BudgetRepository _budgetRepository;
 
-  LocalBudgetTransactionsRepository(this._budgetRepository);
+  LocalBudgetExpansesRepository(this._budgetRepository);
 
   @override
   Future<List<BudgetExpanses>> getByPreviousMonth({

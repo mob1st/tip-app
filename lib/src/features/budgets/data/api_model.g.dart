@@ -23,11 +23,13 @@ Map<String, dynamic> _$BudgetToJson(Budget instance) => <String, dynamic>{
     };
 
 Cost _$CostFromJson(Map<String, dynamic> json) => Cost(
+      id: json['id'] as String,
       name: json['name'] as String,
       value: (json['value'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$CostToJson(Cost instance) => <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'value': instance.value,
     };
