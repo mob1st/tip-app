@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tip/src/features/expanses/ui/home_riverpod.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         WidgetRef ref,
         Widget? child,
       ) {
-        return const MyApp();
+        return const HomePage();
       }),
     );
   }

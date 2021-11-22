@@ -68,7 +68,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => Account(
       name: json['name'] as String,
       number: json['number'] as String,
       agency: json['agency'] as String,
-      categoty: $enumDecode(_$AccountCategotyEnumMap, json['categoty']),
+      category: $enumDecode(_$AccountCategotyEnumMap, json['category']),
       currency: $enumDecode(_$CurrencyEnumMap, json['currency']),
       balance: Balance.fromJson(json['balance'] as Map<String, dynamic>),
     );
@@ -83,7 +83,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
       'name': instance.name,
       'number': instance.number,
       'agency': instance.agency,
-      'categoty': _$AccountCategotyEnumMap[instance.categoty],
+      'category': _$AccountCategotyEnumMap[instance.category],
       'currency': _$CurrencyEnumMap[instance.currency],
       'balance': instance.balance,
     };

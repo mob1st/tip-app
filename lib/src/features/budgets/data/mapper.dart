@@ -3,6 +3,7 @@ import 'package:tip/src/features/budgets/data/api_model.dart' as api;
 
 extension ToDomain on api.Budget {
   Budget toDomain() => Budget(
+        id: 'any',
         name: name,
         total: total,
         costs: costs
@@ -14,5 +15,5 @@ extension ToDomain on api.Budget {
 }
 
 extension on api.Cost {
-  Cost toDomain() => Cost(name: name, value: value);
+  Cost toDomain() => Cost(id: id, name: name, value: value);
 }

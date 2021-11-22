@@ -46,7 +46,7 @@ class Account {
   final String name;
   final String number;
   final String agency;
-  final AccountCategoty categoty;
+  final AccountCategoty category;
   final Currency currency;
   final Balance balance;
 
@@ -60,7 +60,7 @@ class Account {
     required this.name,
     required this.number,
     required this.agency,
-    required this.categoty,
+    required this.category,
     required this.currency,
     required this.balance,
   });

@@ -6,6 +6,7 @@
         "total": 800.00,
         "costs": [
             {
+                "id": "assdasd",
                 "name": "Uber",
                 "value": 50.00
             }
@@ -17,6 +18,7 @@
         "total": 5000.00,
         "costs": [
             {
+                "id": "asdasd",
                 "name": "Aluguel",
                 "value": 2000.00
             }
@@ -29,6 +31,7 @@
         "total": 12000.00,
         "costs": [
             {
+                "id": "awsdasd",
                 "name": "Vacation",
                 "value": 5000.00
             }

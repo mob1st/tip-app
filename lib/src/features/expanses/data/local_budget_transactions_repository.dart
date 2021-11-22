@@ -8,8 +8,7 @@ import 'package:tip/src/features/expanses/domain/repositories.dart';
 import 'package:tip/src/features/expanses/data/api_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class LocalBudgetExpansesRepository
-    implements BudgetTransactionsRepository {
+class LocalBudgetExpansesRepository implements BudgetTransactionsRepository {
   final BudgetRepository _budgetRepository;
 
   LocalBudgetExpansesRepository(this._budgetRepository);
@@ -32,7 +31,8 @@ class LocalBudgetExpansesRepository
   }
 
   Future<List<Transaction>> _loadLocalJson() async {
-    final rawJson = await rootBundle.loadString('transactions.json');
+    final rawJson =
+        await rootBundle.loadString('assets/json/transactions.json');
     final iterable = json.decode(rawJson);
     return List.from(
         iterable.map((transaction) => Transaction.fromJson(transaction)));

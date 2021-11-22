@@ -22,7 +22,11 @@ class HomeListPage extends StatelessWidget {
   const HomeListPage({Key? key, required this.list}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return ListView.separated(
+      separatorBuilder: (context, index) => const Divider(),
+      itemCount: list.length,
+      itemBuilder: (context, index) => Text(list[0].expanses[0].name),
+    );
   }
 }
 

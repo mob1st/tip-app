@@ -32,9 +32,7 @@ class AsyncWidget<T> extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return asyncValue.when(
-      data: (data) {
-        return this.data(context, data);
-      },
+      data: (data) => this.data(context, data),
       error: (error, stackTrace) {
         return this.error?.call(context, error, stackTrace) ??
             DefaultErrorWidget(
@@ -42,9 +40,7 @@ class AsyncWidget<T> extends ConsumerWidget {
               stackTrace: stackTrace,
             );
       },
-      loading: () {
-        return loading?.call(context) ?? const DefaultLoadingWidget();
-      },
+      loading: () => loading?.call(context) ?? const DefaultLoadingWidget(),
     );
   }
 }
