@@ -8,7 +8,7 @@ class HomeSuccessPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (list.isEmpty) {
+    if (list.isNotEmpty) {
       return HomeListPage(list: list);
     } else {
       return const HomeEmptyPage();
