@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tip/src/features/expanses/ui/home_state.dart';
+import 'package:tip/src/foundation/design_system/widgets/organisms/transactions_preview_card.dart';
 
 class HomeSuccessPage extends StatelessWidget {
   final List<BudgetExpansesView> list;
@@ -23,9 +24,20 @@ class HomeListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      separatorBuilder: (context, index) => const Divider(),
+      separatorBuilder: (context, index) => const SizedBox(height: 8),
       itemCount: list.length,
-      itemBuilder: (context, index) => Text(list[0].expanses[0].name),
+      itemBuilder: (context, index) => TransactionsPreviewCard(
+        title: Text(list[index].budget.name),
+        subtitle: Text(list[index].budget.total.toString()),
+        children: ListView.separated(
+          shrinkWrap: true,
+          physics: const ClampingScrollPhysics(),
+          itemBuilder: (context, innerIndex) =>
+              Text(list[index].expanses[innerIndex].name),
+          separatorBuilder: (context, index) => const Divider(),
+          itemCount: list[index].expanses.length,
+        ),
+      ),
     );
   }
 }

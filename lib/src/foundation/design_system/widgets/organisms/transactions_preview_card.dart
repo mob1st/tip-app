@@ -18,7 +18,7 @@ class TransactionsPreviewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Column(
-        children: [],
+        children: [title, subtitle, children],
       ),
     );
   }
