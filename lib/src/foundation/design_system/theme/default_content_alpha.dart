@@ -9,11 +9,10 @@ class DefaultContentOpacity extends InheritedTheme {
     required Widget child,
   }) : super(key: key, child: child);
 
-  static DefaultContentOpacity of(BuildContext context) {
+  static double of(BuildContext context) {
     final contentOpacity =
         context.dependOnInheritedWidgetOfExactType<DefaultContentOpacity>();
-    assert(contentOpacity != null, 'No LocalContentOpacity found in context');
-    return contentOpacity!;
+    return contentOpacity?.opacity ?? 1.0;
   }
 
   @override

@@ -18,8 +18,8 @@ class StyledContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final usedColor = color ?? DefaultContentColor.of(context).color;
-    final usedOpacity = opacity ?? DefaultContentOpacity.of(context).opacity;
+    final usedColor = color ?? DefaultContentColor.of(context);
+    final usedOpacity = opacity ?? DefaultContentOpacity.of(context);
     final usedStyle = style ?? DefaultTextStyle.of(context).style;
     final opacityColor = usedColor.withOpacity(usedOpacity);
     return DefaultContentColor(

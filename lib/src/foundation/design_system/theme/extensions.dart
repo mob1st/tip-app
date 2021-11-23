@@ -24,15 +24,15 @@ extension GetOpacity on BuildContext {
   TextStyle defaultStyle({
     double? opacity,
   }) {
-    final color = DefaultContentColor.of(this).color;
-    final usedOpacity = opacity ?? DefaultContentOpacity.of(this).opacity;
+    final color = DefaultContentColor.of(this);
+    final usedOpacity = opacity ?? DefaultContentOpacity.of(this);
     return DefaultTextStyle.of(this)
         .style
         .copyWith(color: color.withOpacity(usedOpacity));
   }
 
   OpacityLevel get opacityLevel {
-    final color = DefaultContentColor.of(this).color;
+    final color = DefaultContentColor.of(this);
     final isLight = MediaQuery.of(this).platformBrightness.isLight;
     return OpacityLevel.fromColor(color: color, isLight: isLight);
   }

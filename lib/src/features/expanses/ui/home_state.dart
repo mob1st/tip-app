@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tip/src/features/expanses/domain/entities.dart';
 import 'package:tip/src/foundation/state/formattable.dart';
@@ -33,6 +36,7 @@ class ExpanseView with _$ExpanseView {
   factory ExpanseView({
     required String id,
     required Formattable<double> progress,
+    required Color color,
     required Formattable<double> value,
     required Formattable<DateTime> date,
     required String name,
@@ -61,6 +65,7 @@ extension Mapper on BudgetExpanses {
                   value: e.value,
                   formatted: e.value.toString(),
                 ),
+                color: Colors.amber,
                 date: Formattable(
                   value: e.date,
                   formatted: e.date.toString(),

@@ -856,12 +856,14 @@ class _$ExpanseViewTearOff {
   _ExpanseView call(
       {required String id,
       required Formattable<double> progress,
+      required Color color,
       required Formattable<double> value,
       required Formattable<DateTime> date,
       required String name}) {
     return _ExpanseView(
       id: id,
       progress: progress,
+      color: color,
       value: value,
       date: date,
       name: name,
@@ -876,6 +878,7 @@ const $ExpanseView = _$ExpanseViewTearOff();
 mixin _$ExpanseView {
   String get id => throw _privateConstructorUsedError;
   Formattable<double> get progress => throw _privateConstructorUsedError;
+  Color get color => throw _privateConstructorUsedError;
   Formattable<double> get value => throw _privateConstructorUsedError;
   Formattable<DateTime> get date => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -893,6 +896,7 @@ abstract class $ExpanseViewCopyWith<$Res> {
   $Res call(
       {String id,
       Formattable<double> progress,
+      Color color,
       Formattable<double> value,
       Formattable<DateTime> date,
       String name});
@@ -914,6 +918,7 @@ class _$ExpanseViewCopyWithImpl<$Res> implements $ExpanseViewCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? progress = freezed,
+    Object? color = freezed,
     Object? value = freezed,
     Object? date = freezed,
     Object? name = freezed,
@@ -927,6 +932,10 @@ class _$ExpanseViewCopyWithImpl<$Res> implements $ExpanseViewCopyWith<$Res> {
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as Formattable<double>,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -974,6 +983,7 @@ abstract class _$ExpanseViewCopyWith<$Res>
   $Res call(
       {String id,
       Formattable<double> progress,
+      Color color,
       Formattable<double> value,
       Formattable<DateTime> date,
       String name});
@@ -1000,6 +1010,7 @@ class __$ExpanseViewCopyWithImpl<$Res> extends _$ExpanseViewCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? progress = freezed,
+    Object? color = freezed,
     Object? value = freezed,
     Object? date = freezed,
     Object? name = freezed,
@@ -1013,6 +1024,10 @@ class __$ExpanseViewCopyWithImpl<$Res> extends _$ExpanseViewCopyWithImpl<$Res>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as Formattable<double>,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
       value: value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1035,6 +1050,7 @@ class _$_ExpanseView implements _ExpanseView {
   _$_ExpanseView(
       {required this.id,
       required this.progress,
+      required this.color,
       required this.value,
       required this.date,
       required this.name});
@@ -1044,6 +1060,8 @@ class _$_ExpanseView implements _ExpanseView {
   @override
   final Formattable<double> progress;
   @override
+  final Color color;
+  @override
   final Formattable<double> value;
   @override
   final Formattable<DateTime> date;
@@ -1052,7 +1070,7 @@ class _$_ExpanseView implements _ExpanseView {
 
   @override
   String toString() {
-    return 'ExpanseView(id: $id, progress: $progress, value: $value, date: $date, name: $name)';
+    return 'ExpanseView(id: $id, progress: $progress, color: $color, value: $value, date: $date, name: $name)';
   }
 
   @override
@@ -1063,13 +1081,15 @@ class _$_ExpanseView implements _ExpanseView {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.progress, progress) ||
                 other.progress == progress) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, progress, value, date, name);
+  int get hashCode => Object.hash(runtimeType, id, progress,
+      const DeepCollectionEquality().hash(color), value, date, name);
 
   @JsonKey(ignore: true)
   @override
@@ -1081,6 +1101,7 @@ abstract class _ExpanseView implements ExpanseView {
   factory _ExpanseView(
       {required String id,
       required Formattable<double> progress,
+      required Color color,
       required Formattable<double> value,
       required Formattable<DateTime> date,
       required String name}) = _$_ExpanseView;
@@ -1089,6 +1110,8 @@ abstract class _ExpanseView implements ExpanseView {
   String get id;
   @override
   Formattable<double> get progress;
+  @override
+  Color get color;
   @override
   Formattable<double> get value;
   @override

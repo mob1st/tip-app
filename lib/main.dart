@@ -29,13 +29,15 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Consumer(builder: (
-        BuildContext context,
-        WidgetRef ref,
-        Widget? child,
-      ) {
-        return const HomePage();
-      }),
+      home: Consumer(
+        builder: (
+          BuildContext context,
+          WidgetRef ref,
+          Widget? child,
+        ) {
+          return const HomePage();
+        },
+      ),
     );
   }
 }

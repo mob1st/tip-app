@@ -12,11 +12,10 @@ class DefaultContentColor extends InheritedTheme {
           child: child,
         );
 
-  static DefaultContentColor of(BuildContext context) {
+  static Color of(BuildContext context) {
     final contentOpacity =
         context.dependOnInheritedWidgetOfExactType<DefaultContentColor>();
-    assert(contentOpacity != null, 'No LocalContentColor found in context');
-    return contentOpacity!;
+    return contentOpacity?.color ?? Theme.of(context).colorScheme.onSurface;
   }
 
   @override
@@ -27,11 +26,5 @@ class DefaultContentColor extends InheritedTheme {
   @override
   Widget wrap(BuildContext context, Widget child) {
     return DefaultContentColor(color: color, child: child);
-  }
-
-  @override
-  List<DiagnosticsNode> debugDescribeChildren() {
-    // TODO: implement debugDescribeChildren
-    return super.debugDescribeChildren();
   }
 }

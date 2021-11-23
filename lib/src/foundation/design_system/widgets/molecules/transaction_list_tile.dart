@@ -32,9 +32,8 @@ class TransactionListTile extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: ListTile(
-        leading: progress,
         title: title,
-        subtitle: styledSubtitle,        
+        subtitle: styledSubtitle,
         trailing: const Icon(Icons.ac_unit_sharp),
       ),
     );
