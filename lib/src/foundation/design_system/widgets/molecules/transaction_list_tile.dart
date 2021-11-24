@@ -29,7 +29,9 @@ class TransactionListTile extends StatelessWidget {
     }
     return ListTile(
       onTap: onTap,
+      leading: progress,
       title: title,
+      minLeadingWidth: 10,
       subtitle: subtitle,
       trailing: Row(
         mainAxisSize: MainAxisSize.min,

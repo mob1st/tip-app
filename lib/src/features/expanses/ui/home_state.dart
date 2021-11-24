@@ -58,7 +58,7 @@ extension Mapper on BudgetExpanses {
               (e) => ExpanseView(
                 id: e.id,
                 progress: Formattable(
-                  value: budget.total / e.value,
+                  value: (e.value / budget.total) * 100,
                   formatted: (budget.total / e.value).toString(),
                 ),
                 value: Formattable(

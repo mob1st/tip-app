@@ -12,9 +12,12 @@ class VerticalProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LinearProgressIndicator(
-      value: value,
-      color: color,
+    return RotatedBox(
+      quarterTurns: -1,
+      child: LinearProgressIndicator(
+        value: value,
+        color: color,
+      ),
     );
   }
 }
