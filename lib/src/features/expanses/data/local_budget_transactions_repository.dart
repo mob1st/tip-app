@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:tip/src/features/budgets/domain/budget_entitites.dart';
 import 'package:tip/src/features/budgets/domain/budget_repository.dart';
@@ -34,7 +35,8 @@ class LocalBudgetExpansesRepository implements BudgetTransactionsRepository {
     final rawJson =
         await rootBundle.loadString('assets/json/transactions.json');
     final iterable = json.decode(rawJson);
-    return List.from(
-        iterable.map((transaction) => Transaction.fromJson(transaction)));
+    return List<Transaction>.from(
+      iterable.map((t) => Transaction.fromJson(t)),
+    );
   }
 }

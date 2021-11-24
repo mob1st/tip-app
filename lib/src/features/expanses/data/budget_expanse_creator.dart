@@ -14,10 +14,20 @@ List<BudgetExpanses> createBudgetExpanses(
         ),
       )
       .toList();
-  for (final transaction in transactions) {
+  var isPreviewFilled = false;
+  var transactionsIndex = 0;
+  while (!isPreviewFilled && transactions.length > transactionsIndex) {
+    final transaction = transactions[transactionsIndex];
     final expanse = transaction.toExpanse();
     final index = transaction.category.toBudget().index;
-    budgetsTransactions[index].expanses.add(expanse);
+    final currentBudgetExpanses = budgetsTransactions[index].expanses;
+    if (currentBudgetExpanses.length < 4) {
+      currentBudgetExpanses.add(expanse);
+    }
+    isPreviewFilled = budgetsTransactions[0].expanses.length == 4 &&
+        budgetsTransactions[1].expanses.length == 4 &&
+        budgetsTransactions[2].expanses.length == 4;
+    transactionsIndex++;
   }
   return budgetsTransactions;
 }
