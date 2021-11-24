@@ -44,7 +44,7 @@ class HomeListPage extends StatelessWidget {
                   ),
                   title: Text(expanse.name),
                   subtitle: Text(expanse.date.formatted),
-                  detail: Text(expanse.value.formatted),
+                  trailing: Text(expanse.value.formatted),
                 );
               },
               count: list[index].expanses.length,

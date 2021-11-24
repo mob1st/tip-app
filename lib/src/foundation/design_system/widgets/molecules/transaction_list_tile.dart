@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:tip/src/foundation/design_system/theme/styled_content.dart';
-import 'package:tip/src/foundation/design_system/theme/extensions.dart';
 import 'package:tip/src/foundation/design_system/widgets/atoms/vertical_progress.dart';
 
 class TransactionListTile extends StatelessWidget {
   final VerticalProgress progress;
   final Text title;
   final Text? subtitle;
-  final Text detail;
+  final Text trailing;
+  final GestureTapCallback? onTap;
 
   const TransactionListTile({
     Key? key,
     required this.progress,
     required this.title,
     this.subtitle,
-    required this.detail,
+    required this.trailing,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Widget? styledSubtitle;
-    if (subtitle != null) {
-      styledSubtitle = StyledContent(
-        child: subtitle!,
-        style: Theme.of(context).textTheme.bodyText2,
-        opacity: context.opacityLevel.medium,
+    final List<Widget> children = [trailing];
+    if (onTap != null) {
+      children.add(
+        const Icon(
+          Icons.ice_skating,
+        ),
       );
-    } else {
-      styledSubtitle = null;
     }
-    return GestureDetector(
-      onTap: () {},
-      child: ListTile(
-        title: title,
-        subtitle: styledSubtitle,
-        trailing: const Icon(Icons.ac_unit_sharp),
+    return ListTile(
+      onTap: onTap,
+      title: title,
+      subtitle: subtitle,
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          trailing,
+          if (onTap != null)
+            const Icon(
+              Icons.ice_skating,
+            ),
+        ],
       ),
     );
   }

@@ -18,28 +18,19 @@ class TransactionsPreviewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final children = [
-      title,
-      subtitle,
-      ListView.separated(
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        itemBuilder: itemBuilder.builder,
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: itemBuilder.count,
-      ),
-    ];
-    if (seeAllClick != null) {
-      children.add(
-        MaterialButton(
-          onPressed: seeAllClick,
-          child: const Text('See All'),
-        ),
-      );
-    }
     return Card(
       child: Column(
-        children: children,
+        children: [
+          title,
+          subtitle,
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const ClampingScrollPhysics(),
+            itemBuilder: itemBuilder.builder,
+            separatorBuilder: (context, index) => const Divider(),
+            itemCount: itemBuilder.count,
+          ),
+        ],
       ),
     );
   }
