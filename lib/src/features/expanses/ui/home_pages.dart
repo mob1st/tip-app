@@ -34,6 +34,7 @@ class HomeListPage extends StatelessWidget {
           return TransactionsPreviewCard(
             title: Text(budget.name),
             subtitle: Text(budget.total.formatted),
+            onPressSeeAll: () {},
             itemBuilder: ListItemBuilder(
               builder: (innerContext, innerIndex) {
                 final expanse = list[index].expanses[innerIndex];
