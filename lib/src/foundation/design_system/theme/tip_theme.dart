@@ -16,8 +16,8 @@ class TipTheme extends StatelessWidget {
   build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: light(),
-      darkTheme: dark(),
+      theme: ThemeData.light().theme(),
+      darkTheme: ThemeData.dark().theme(),
       home: Consumer(
         builder: (
           BuildContext innerContext,
@@ -36,7 +36,3 @@ class TipTheme extends StatelessWidget {
     );
   }
 }
-
-ThemeData light() => ThemeData.light();
-
-ThemeData dark() => ThemeData.dark();

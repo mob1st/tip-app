@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tip/src/foundation/design_system/theme/colors.dart';
 import 'package:tip/src/foundation/design_system/theme/content_alpha.dart';
 import 'package:tip/src/foundation/design_system/theme/default_content_alpha.dart';
 import 'package:tip/src/foundation/design_system/theme/default_content_color.dart';
@@ -41,4 +42,32 @@ extension GetOpacity on BuildContext {
 extension Is on Brightness {
   bool get isLight => this == Brightness.light;
   bool get isDark => this == Brightness.dark;
+}
+
+extension ThemeColors on ThemeData {
+  ThemeData theme() => _colors()._typographies()._shapes();
+
+  ThemeData _colors() {
+    if (colorScheme.brightness.isLight) {
+      return _lightColors();
+    } else {
+      return _darkColors();
+    }
+  }
+
+  ThemeData _lightColors() => copyWith(
+        colorScheme: ColorScheme.light(
+          primary: pink.shade500,
+        ),
+      );
+
+  ThemeData _darkColors() => copyWith(
+        colorScheme: ColorScheme.dark(
+          primary: pink.shade100,
+        ),
+      );
+
+  ThemeData _typographies() => copyWith();
+
+  ThemeData _shapes() => copyWith();
 }
